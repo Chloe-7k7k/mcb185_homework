@@ -1,5 +1,5 @@
 #25entropy.py by Zhiying He
-# cooperate with Raigosa
+#cooperate with Raigosa
 
 import math
 
