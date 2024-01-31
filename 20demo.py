@@ -5,7 +5,7 @@ import math
 
 print(math.pow(2, 3))
 print(math.sqrt(2))
-print (math.log(3))
+print(math.log(3))
 
 
 a = 3
