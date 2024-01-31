@@ -9,7 +9,7 @@ def quadratic(a, b, c):
 		x2 = (-b - math.sqrt(D)) / (2*a)
 		return x1, x2
 	if D < 0 :
-		return 'no real root', 'no real root'
+		return 'Error', 'Error'
 
 
 print(quadratic(1, 3, 5))
