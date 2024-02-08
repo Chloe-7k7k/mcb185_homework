@@ -1,4 +1,5 @@
 #37nilakantha.py by Zhiying He
+#cooperate with Aman Panigrahi
 
 total = 3
 denom = 2
