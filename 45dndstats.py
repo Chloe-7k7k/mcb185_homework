@@ -44,19 +44,19 @@ print(total3d6x2 / limit)
 total4d6d1 = 0
 for i in range(limit):
 	score = 0
-	for j in range(3):
-		p1 = random.randint(1, 6)
-		p2 = random.randint(1, 6)
-		p3 = random.randint(1, 6)
-		p4 = random.randint(1, 6)
-		if p1 >= p4 and p2 >= p4 and p3 >= p4:
-			score = p1 + p2 + p3
-		elif p1 >= p3 and p2 >= p3 and p4 >= p3:
-			score = p1 + p2 + p4
-		elif p1 >= p2 and p3 >= p2 and p4 >= p2:
-			score = p1 + p3 + p4
-		else:
-			score = p2 + p3 + p4
+	p1 = random.randint(1, 6)
+	p2 = random.randint(1, 6)
+	p3 = random.randint(1, 6)
+	p4 = random.randint(1, 6)
+	
+	if p1 >= p4 and p2 >= p4 and p3 >= p4:
+		score += p1 + p2 + p3
+	elif p1 >= p3 and p2 >= p3 and p4 >= p3:
+		score += p1 + p2 + p4
+	elif p1 >= p2 and p3 >= p2 and p4 >= p2:
+		score += p1 + p3 + p4
+	else:
+		score += p2 + p3 + p4
 	total4d6d1 += score 
 print(total4d6d1 / limit)
 
