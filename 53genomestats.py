@@ -35,10 +35,15 @@ def mean(vals):
 	for val in vals: total += val
 	return total / len(vals)
 	
+	
 def stdv(vals):
-	avg = mean(vals)
-	variance = sum((x - avg) ** 2 for x in vals) / len(vals)
-	return math.sqrt(variance)
+    avg = mean(vals)
+    variance = 0
+    for x in vals:
+        variance += (x - avg) ** 2
+    sd = variance / len(vals)
+    return math.sqrt(sd)
+    
 
 def median(vals):
 	vals.sort()
@@ -56,9 +61,9 @@ avg = mean(lengths)
 stdv = stdv(lengths)
 median = median(lengths)
 
-print("Count:", count)
-print("Min:", mini)
-print("Max:", maxi)
-print("Mean:", avg)
-print("Standard Deviation:", stdv)
-print("Median:", median)
+print("count:", count)
+print("min:", mini)
+print("max:", maxi)
+print("mean:", avg)
+print("standard deviation:", stdv)
+print("median:", median)
