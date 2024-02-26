@@ -24,7 +24,6 @@ def check(calendar):
 				return True
 	return False
       
-    
 def paradox(trials, days, people):
 	duplicate = 0
 	for j in range(trials):
