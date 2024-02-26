@@ -10,17 +10,17 @@ feature = sys.argv[2]
 #path = '../MCB185/data/A.thaliana.gff.gz'
 
 def gff(gffpath, feature):
-    lengths = []
-    with gzip.open(gffpath, 'rt') as fp:
-        for line in fp:
-            if line[0] == '#': 
-                continue
-            words = line.split()
-            if words[2] == feature:
-                beg = int(words[3])
-                end = int(words[4])
-                lengths.append(end - beg + 1)
-    return lengths
+	lengths = []
+	with gzip.open(gffpath, 'rt') as fp:
+		for line in fp:
+			if line[0] == '#': 
+				continue
+			words = line.split()
+			if words[2] == feature:
+				beg = int(words[3])
+				end = int(words[4])
+				lengths.append(end - beg + 1)
+	return lengths
 
 def minmax(vals):
 	mini = vals[0]
@@ -36,17 +36,17 @@ def mean(vals):
 	return total / len(vals)
 	
 def stdv(vals):
-    avg = mean(vals)
-    variance = sum((x - avg) ** 2 for x in vals) / len(vals)
-    return math.sqrt(variance)
+	avg = mean(vals)
+	variance = sum((x - avg) ** 2 for x in vals) / len(vals)
+	return math.sqrt(variance)
 
 def median(vals):
-    vals.sort()
-    n = len(vals)
-    if n % 2 == 0:
-        return (vals[n//2 - 1] + vals[n//2]) / 2
-    else:
-        return vals[n//2]
+	vals.sort()
+	n = len(vals)
+	if n % 2 == 0:
+		return (vals[n//2 - 1] + vals[n//2]) / 2
+	else:
+		return vals[n//2]
 
 lengths = gff(gffpath, feature)
 count = len(lengths)
