@@ -17,11 +17,12 @@ def birthday(people, days):
 
 def check(birthdays):
 	birthdays.sort()
-	for i in range(1, len(birthdays)):
-		if birthdays[i] == birthdays[i - 1]:
-			return True
+	for i in range(len(birthdays)):
+			for j in range(i + 1, len(birthdays)):
+				if birthdays[i] == birthdays[j]:
+					return True
 	return False
-      
+
     
 def paradox(trials, days, people):
 	duplicate = 0
