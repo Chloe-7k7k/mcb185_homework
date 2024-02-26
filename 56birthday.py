@@ -14,15 +14,6 @@ def birthday(people, days):
         birthdays.append(birthday)
     return birthdays
 
-"""
-def check(birthdays):
-    n = len(birthdays)
-    for i in range(n):
-        for j in range(i+1, n):
-            if birthdays[i] == birthdays[j]:
-                return True
-    return False
-"""
 
 def check(birthdays):
     birthdays.sort()
