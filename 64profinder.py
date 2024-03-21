@@ -24,6 +24,6 @@ for defline, seq in mcb185.read_fasta(infile):
 			for protein in proteins:
 				if len(protein) >= minlength and protein[0] == 'M':
 					protnum += 1
-					print(f'>{defline}-prot-{protnum}')
+					print(f'>{defline}')
 					print(protein)
 
