@@ -31,7 +31,6 @@ entropythreshold = float(sys.argv[3])
 
 
 for defline, seq in mcb185.read_fasta(path):
-	print(f'>(defline)', end='')
 	final = list(seq)
 
 	for i in range(len(seq) - windowsize + 1):
@@ -44,8 +43,9 @@ for defline, seq in mcb185.read_fasta(path):
 		winentropy = entropy(a, c, g, t)
 		if winentropy < entropythreshold:
 			final[i:i + windowsize] = ['N'] * windowsize
-			
-complete = ''.join(final)		
-for i in range(0, len(complete), 60):
-	print(complete[i:i+60])
+		
+	print(f'>{defline}', end='\n')
+	complete = ''.join(final)		
+	for i in range(0, len(complete), 60):
+		print(complete[i:i+60])
 
